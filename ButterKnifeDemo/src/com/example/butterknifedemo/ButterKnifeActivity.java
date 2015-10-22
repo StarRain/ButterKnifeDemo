@@ -3,13 +3,10 @@ package com.example.butterknifedemo;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.os.Bundle;
-import android.renderscript.Sampler.Value;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,7 +23,6 @@ public class ButterKnifeActivity extends Activity {
 	ListView mListView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_butterknife);
 		ButterKnife.bind(this);
@@ -35,13 +31,11 @@ public class ButterKnifeActivity extends Activity {
 	}
 	
 	private void initModel() {
-		// TODO Auto-generated method stub
 		mAdapter = new BKAdapter();
 		mListView.setAdapter(mAdapter);
 	}
 
 	private void initDatas() {
-		// TODO Auto-generated method stub
 		for (int i = 'A'; i < 'z'; i++) {
 			mDatas.add(String.valueOf((char) i));
 		}
@@ -62,25 +56,21 @@ public class ButterKnifeActivity extends Activity {
 
 		@Override
 		public int getCount() {
-			// TODO Auto-generated method stub
 			return mDatas.size();
 		}
 
 		@Override
 		public String getItem(int position) {
-			// TODO Auto-generated method stub
 			return mDatas.get(position);
 		}
 
 		@Override
 		public long getItemId(int position) {
-			// TODO Auto-generated method stub
 			return position;
 		}
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
 			ViewHolder holder= null;
 			if(convertView == null){
 				convertView = getLayoutInflater().inflate(R.layout.item_butterknife_text, null);
